@@ -1,19 +1,26 @@
 
 import { asyncFunction } from './js/api'
-import { checkForName } from './js/nameChecker'
-import { handleSubmit } from './js/formHandler'
 
-// import "~bootstrap/scss/bootstrap.scss";
-// import '~bootstrap/dist/css/bootstrap.min.css';
+
 import './styles/resets.scss'
 import './styles/base.scss'
 
-console.log(checkForName);
 
-console.log("CHANGE!!");
+
+document.getElementById('submit').addEventListener('click', (e) => {
+	e.preventDefault();
+	console.log('click');
+	let city = document.getElementById('name').value;
+	let date = document.getElementById('travel-day').value;
+	// if no date was selected, select current date.
+	if(date === ''){
+		let newDate = new Date();
+		date = newDate.toISOString().slice(0, 10);
+	}
+	console.log(date);
+	asyncFunction(city, date);
+});
 
 export {
-    checkForName,
-	handleSubmit,
 	asyncFunction
 }
