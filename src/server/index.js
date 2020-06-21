@@ -2,7 +2,7 @@ const savedData = {};
 
 // var path = require('path')
 // const express = require('express')
-// const mockAPIResponse = require('./mockAPI.js')
+const mockAPIResponse = require('./mockAPI.js')
 
 // const app = express()
 // // Cors for cross origin allowance
@@ -33,8 +33,8 @@ app.get('/', function (req, res) {
 })
 
 app.post('/postEntry', function (req, res){
-	savedData.push(res);
-	console.log(`res is ${res}`);
+	savedData.push(req);
+	console.log(`res is ${req}`);
 	res.send(savedData);
 });
 

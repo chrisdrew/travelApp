@@ -81,7 +81,7 @@ const postCap = async(url='', data)=>{
         // Body data type must match "Content-Type" header        
         body: JSON.stringify(data), 
 	});
-	console.log(`response = ${response}`);
+	console.log(`response = ${response.body}`);
     try {
         const newData = await response.json();
         return newData;
