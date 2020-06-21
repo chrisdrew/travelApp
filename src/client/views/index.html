@@ -8,102 +8,47 @@
 	</head>
 
 	<body>
-		<div class="container">
+		<div class="cover-container">
 			<header>
 				<div>
-					<h1>FEND Capstone - Travel App</h1>
+					<h1 >FEND Capstone - Travel App</h1>
 				</div>
 			</header>
-			<section>
-				<form class="form" onsubmit="return Client.handleSubmit(event)">
-					<div class="form-group row">
-						<label for="inputPassword" class="col-sm-3 col-form-label">
-							<h5>Search Your City!</h5>
-						</label>
-						<div class="col-sm-4">
-							<input id="name" class="form-control" id="inputPassword" placeholder="Seoul" onblur="onBlur()">
+			<section  class="jumbotron  jumbotron-fluid">
+				<form class="form container">
+						<div class="row">
+							<div class="col-sm-12">
+								<h5>Search For Your City!</h5>
+							</div>
+							<div class="col-sm-12 col-md-8 col-lg-9">
+								<input id="name" class="form-control" id="inputPassword" placeholder="Seoul" required>
+							</div>
+							<div class="col-sm-12 col-md-4 col-lg-3">
+								<input type="date" class="form-control" id="travel-day" name="travel-day" required>
+							</div>
 						</div>
-						<div class="col-sm-3">
-							<button type="submit" class="btn btn-primary btn-block" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">Search</button>
+						<div class="row  justify-content-end">
+							<div class="col-sm-12">
+								<button id="submit" class="btn btn-primary btn-block" type="submit">Search</button>
+							</div>
 						</div>
-					</div>
-				</form>
+						<div class="row" id="error">
+							<div class="col-sm-12">
+								<div class="alert alert-warning" role="alert">
+									Sorry we had issues findind your City name.
+								  </div>
+							  </div>
+						</div>
+				</form>	
 			</section>
 		</div>
-		<div class="container-fluid">
-			<h1 id="location"></h1>
-			<div class="row">
-				<section id="content"></section>
-				<section class="col-sm-12 col-md-12 col-lg-6">
-						<div class="row" id="images-holder">
-							<img class="col-12" id="main-img"></img>
-							<img class="col-sm-12 col-md-6" id="img-2"></img>
-							<img class="col-sm-12 col-md-6" id="img-3"></img>
-						</div>
-				</section>
-				<section class="col-sm-12 col-md-12 col-lg-6">
-					<div id="results">
-						<div>
-							<h3>Random Things</h3>
-							<ul>
-								<li>Population: <span id="pop"></span></li>
-								<li>Latitude: <span id="lat"></span></li>
-								<li>Longitude: <span id="lng"></span></li>
-							</ul>
-						</div>
-						<div id="weather">
-							<h3>Weather Stats</h3>
-							<p>Six day Weather</p>
-							  
-							<ul class="row weather">
-								<li id="wd-1" class="col-2  weather-card">
-									<div id="wd-1-date" class="weather-date"></div>
-									<img id="wd-1-icon" class="weather-icon"></img>
-									<div id="wd-1-temp" class="weather-temp"></div>
-									<div id="wd-1-des" class="weather-des"></div>
-								</li>
-								<li id="wd-2" class="col-2  weather-card">
-									<div id="wd-2-date" class="weather-date"></div>
-									<img id="wd-2-icon" class="weather-icon"></img>
-									<div id="wd-2-temp" class="weather-temp"></div>
-									<div id="wd-2-des" class="weather-des"></div>
-								</li>
-								<li id="wd-3" class="col-2  weather-card">
-									<div id="wd-3-date" class="weather-date"></div>
-									<img id="wd-3-icon" class="weather-icon"></img>
-									<div id="wd-3-temp" class="weather-temp"></div>
-									<div id="wd-3-des" class="weather-des"></div>
-								</li>
-								<li id="wd-4" class="col-2  weather-card">
-									<div id="wd-4-date" class="weather-date"></div>
-									<img id="wd-4-icon" class="weather-icon"></img>
-									<div id="wd-4-temp" class="weather-temp"></div>
-									<div id="wd-4-des" class="weather-des"></div>
-								</li>
-								<li id="wd-5" class="col-2  weather-card">
-									<div id="wd-5-date" class="weather-date"></div>
-									<img id="wd-5-icon" class="weather-icon"></img>
-									<div id="wd-5-temp" class="weather-temp"></div>
-									<div id="wd-5-des" class="weather-des"></div>
-								</li>
-								<li id="wd-6" class="col-2  weather-card">
-									<div id="wd-6-date" class="weather-date"></div>
-									<img id="wd-6-icon" class="weather-icon"></img>
-									<div id="wd-6-temp" class="weather-temp"></div>
-									<div id="wd-6-des" class="weather-des"></div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-			</div>
+		<div id="submisson" class="container-fluid">
+
 		</div>
 
-
 		<footer>
-			<p>This is a footer</p>
+			<p>Designed and Developed by Chris Drew for Udacity</p>
 		</footer>
 
 	</body>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </html>
