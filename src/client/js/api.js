@@ -10,12 +10,12 @@ const day = ['Sunday', 'Monday', 'Tuesday', 'Wendnesday', 'Thursday', 'Friday', 
 
 let newEntry = {
 	geoname:{
-		countryName: '',
-		lat: '',
-		lng: '',
-		name: '',
-		adminName1: '',
-		population: 0
+		countryName: null,
+		lat: null,
+		lng: null,
+		name: null,
+		adminName1: null,
+		population: null
 	},
 	weather:{},
 	image:{}
@@ -71,6 +71,26 @@ const pixabayImage = async (location) =>{
 	}
 }
 
+const postCap = async(url='', data)=>{
+    const response = await fetch(url, {
+        method: 'POST', 
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        // Body data type must match "Content-Type" header        
+        body: JSON.stringify(data), 
+	});
+	console.log(`response = ${response}`);
+    try {
+        const newData = await response.json();
+        return newData;
+    }catch(e){
+        console.log(e);
+        return
+    }
+}
+
 const printResult = async (inputDate) =>{
 	document.getElementById('location').innerHTML = `<span class="result-text">Your Results:</span> ${newEntry.geoname.name}, ${newEntry.geoname.countryName}`;
 	// images
@@ -114,15 +134,17 @@ const printResult = async (inputDate) =>{
 const asyncFunction = async (city, date) => {
 	document.getElementById('error').style.display='none';
 	await getCity(city);
-	if (newEntry.geoname.countryName !== '') {
+	// if (newEntry.geoname.countryName !== '') {
 		await weather();
+		console.log(newEntry);
 		await pixabayImage(newEntry.geoname.name);
 		if(JSON.stringify(newEntry.image) === '[]') {
 			await pixabayImage(newEntry.geoname.countryName);
 		}
+		await postCap('/postEntry', newEntry);
 		await template();
 		await printResult(date);
-	}
+	// }
 	
 }
 

@@ -19,8 +19,13 @@ This is my final project for Front End Developer Nanodegree Program.
 ```
 git clone -- https://github.com/chrisdrew/travelApp.git --
 ```
-
 `cd` into your new folder and run:
 - ```npm install```
+
+### Run dev on your local machine
 - ```npm build-dev``` to start the app
 - this app runs on localhost:8080
+
+### Run dev on your local machine
+- ```npm build-prod``` to start the app
+- this app runs on localhost:8082
