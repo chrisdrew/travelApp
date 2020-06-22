@@ -26,7 +26,6 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
-console.log(__dirname)
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
@@ -34,7 +33,6 @@ app.get('/', function (req, res) {
 
 app.post('/postEntry', function (req, res){
 	savedData.push(req.body.data);
-	console.log(savedData)
 	res.send(savedData);
 });
 
@@ -46,3 +44,6 @@ app.listen(8082, function () {
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
+
+
+  module.exports = app;
