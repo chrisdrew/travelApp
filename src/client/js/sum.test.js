@@ -5,3 +5,4 @@ describe("testing if function is a valid function",()=>{
         expect(typeof getCity).toBe("function");
     });
 });
+

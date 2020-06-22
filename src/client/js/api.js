@@ -79,7 +79,7 @@ const postCap = async(url='', data)=>{
             'Content-Type': 'application/json',
         },
         // Body data type must match "Content-Type" header        
-        body: JSON.stringify(data), 
+        body: JSON.stringify({'data': data}), 
 	});
 	console.log(`response = ${response.body}`);
     try {
@@ -136,14 +136,14 @@ const asyncFunction = async (city, date) => {
 	await getCity(city);
 	// if (newEntry.geoname.countryName !== '') {
 		await weather();
-		console.log(newEntry);
 		await pixabayImage(newEntry.geoname.name);
 		if(JSON.stringify(newEntry.image) === '[]') {
 			await pixabayImage(newEntry.geoname.countryName);
 		}
-		await postCap('/postEntry', newEntry);
+		await postCap('http://localhost:8082/postEntry', newEntry);
 		await template();
 		await printResult(date);
+		console.log(newEntry)
 	// }
 	
 }

@@ -1,4 +1,4 @@
-const savedData = {};
+let savedData = [];
 
 // var path = require('path')
 // const express = require('express')
@@ -33,13 +33,8 @@ app.get('/', function (req, res) {
 })
 
 app.post('/postEntry', function (req, res){
-	savedData.push(req);
-	console.log(`res is ${req}`);
-	res.send(savedData);
-});
-
-app.get('/get', function (req, res){
-	console.log(`mockAPIResponse is now ${savedData}`);
+	savedData.push(req.body.data);
+	console.log(savedData)
 	res.send(savedData);
 });
 
