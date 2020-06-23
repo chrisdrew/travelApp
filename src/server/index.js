@@ -1,14 +1,8 @@
 let savedData = [];
 
-// var path = require('path')
-// const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 
-// const app = express()
-// // Cors for cross origin allowance
-// const cors = require('cors');
-// app.use(cors());
-// app.use(express.static('dist'))
+
 
 // Require Express to run server and routes
 const express = require('express');

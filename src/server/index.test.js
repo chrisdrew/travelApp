@@ -23,17 +23,3 @@ describe('Endpoint test', () => {
 	  done();
 	});
   });
- 
-// app.get('/user', function(req, res) {
-//   res.status(200).json(testJson);
-// });
- 
-// test('Get content', () => {
-// request(app)
-//   .get('/user')
-//   .expect('Content-Type', /json/)
-//   .expect(200)
-//   .end(function(err, res) {
-//     if (err) throw err;
-//   });
-// });
