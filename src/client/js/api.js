@@ -148,4 +148,4 @@ const asyncFunction = async (city, date) => {
 	
 }
 
-export { asyncFunction, getCity, pixabayImage }
+export { asyncFunction, getCity, pixabayImage, printResult }

@@ -29,3 +29,6 @@ git clone -- https://github.com/chrisdrew/travelApp.git --
 ### Run dev on your local machine
 - ```npm build-prod``` to start the app
 - this app runs on localhost:8082
+
+### Get server running on
+- ```npm start``` to start the server

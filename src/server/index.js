@@ -29,21 +29,23 @@ app.use(express.static('website'));
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
-})
+});
 
 app.post('/postEntry', function (req, res){
 	savedData.push(req.body.data);
 	res.send(savedData);
 });
 
+app.get('/test', function (req, res) {
+	// res.send(mockAPIResponse)
+	res.status(200).json(mockAPIResponse)
+});
+
 // designates what port the app will listen to for incoming requests
 app.listen(8082, function () {
     console.log('Example app listening on port 8082!')
-})
-
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-})
+});
 
 
-  module.exports = app;
+
+module.exports = app;

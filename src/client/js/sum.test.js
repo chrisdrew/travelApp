@@ -1,8 +1,8 @@
-const {getCity} = require('./api');
+const {printResult} = require('./api');
 
-describe("testing if function is a valid function",()=>{
-    test("function is true ", () => {
-        expect(typeof getCity).toBe("function");
-    });
+describe('Check and see if function is alive', () => {
+  test('Return true', () => {
+    expect(printResult).toBeDefined();
+  });
 });
 
