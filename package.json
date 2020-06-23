@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest  --unhandled-rejections=strict",
+    "test": "jest --runInBand --detectOpenHandles",
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
@@ -15,9 +15,11 @@
   "dependencies": {
     "autoprefixer": "^9.8.0",
     "bootstrap": "^4.5.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "postcss-loader": "^3.0.0",
+    "supertest": "^4.0.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   },
